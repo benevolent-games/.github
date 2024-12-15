@@ -61,15 +61,21 @@ body {
 			flex-direction: column;
 			align-items: center;
 			width: max-content;
+			gap: 0.5em;
+
+			color: white;
 
 			> svg {
 				height: 16em;
 			}
 
+			> strong {
+				font-size: 1.8em;
+			}
+
 			> em {
-				font-size: 1.5em;
-				font-style: normal;
-				font-weight: bold;
+				opacity: 0.5;
+				font-size: 1.1em;
 			}
 		}
 	}

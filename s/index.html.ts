@@ -43,13 +43,10 @@ export default template(async basic => {
 			<header>
 				<div class=logo>
 					${svgTurtle(bSvg)}
-					<em>${card.title}</em>
+					<strong>${card.title}</strong>
+					<em>${card.description}</em>
 				</div>
 			</header>
-
-			<section class=explainer>
-				<p>${card.description}</p>
-			</section>
 
 			<div class=gamelist>
 				${Object.values(games).map(game => html`
