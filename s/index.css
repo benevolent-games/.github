@@ -10,6 +10,25 @@
 	--link: cyan;
 }
 
+a {
+	color: var(--link);
+	text-decoration: none;
+
+	&:visited {
+		color: color-mix(in srgb, purple, var(--link) 70%);
+	}
+
+	&:hover {
+		color: color-mix(in srgb, white, var(--link) 90%);
+		text-decoration: underline;
+	}
+
+	&:active {
+		color: color-mix(in srgb, white, var(--link) 50%);
+	}
+}
+
+
 html, body {
 	min-height: 100%;
 }
@@ -48,16 +67,17 @@ body {
 			}
 
 			> em {
-				font-size: 2em;
-				font-style: italic;
-				font-family: serif;
+				font-size: 1.5em;
+				font-style: normal;
+				font-weight: bold;
 			}
 		}
 	}
 
-	> .greeter {
+	> .explainer {
+		font-size: 1.2em;
+		max-width: 18em;
 		text-align: center;
-		margin: 3em auto;
 	}
 
 	> .gamelist {
@@ -72,6 +92,7 @@ body {
 		> section {
 			display: flex;
 			flex-direction: row;
+			flex-wrap: wrap;
 			gap: 2em;
 			align-items: center;
 
@@ -83,13 +104,18 @@ body {
 			border-radius: 2em;
 			box-shadow: .1em .3em .9em #0002;
 
-			> figure img {
-				width: 12em;
-				border-radius: 1em;
-				box-shadow: .1em .2em .4em #0004;
+			> figure {
+				flex: 0 0 auto;
+
+				& img {
+					width: 12em;
+					border-radius: 1em;
+					box-shadow: .1em .2em .4em #0004;
+				}
 			}
 
 			> div {
+				flex: 1 1 8em;
 				display: flex;
 				flex-direction: column;
 				gap: 1em;

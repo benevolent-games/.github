@@ -4,8 +4,18 @@ import {svgTurtle} from "@benev/slate/x/tools/svgs/svg-turtle.js"
 import {template, html, easypage, headScripts, git_commit_hash, read_file} from "@benev/turtle"
 
 import {games} from "./games.js"
-
 import bSvg from "./dom/icons/b.svg.js"
+import {SocialCard, renderSocialCardMetas} from "./utils/social-card.js"
+
+const card: SocialCard = {
+	themeColor: "#f2ea8e",
+	siteName: "Benevolent.games",
+	title: "Benevolent Games",
+	description: "Building the future of web games",
+	image: "https://benevolent.games/assets/favicon.png",
+	url: "https://benevolent.games/",
+	type: "website",
+}
 
 export default template(async basic => {
 	const path = basic.path(import.meta.url)
@@ -14,11 +24,14 @@ export default template(async basic => {
 		path,
 		dark: true,
 		css: "index.css",
-		title: "benevolent.games",
+		title: "Benevolent.games",
 		head: html`
 			<link rel="icon" href="/assets/favicon.png"/>
 			<link rel="stylesheet" href="${path.version.root("index.css")}"/>
 			<meta data-commit-hash="${hash}"/>
+
+			${renderSocialCardMetas(card)}
+
 			${headScripts({
 				devModulePath: await path.version.root("index.bundle.js"),
 				prodModulePath: await path.version.root("index.bundle.min.js"),
@@ -30,16 +43,20 @@ export default template(async basic => {
 			<header>
 				<div class=logo>
 					${svgTurtle(bSvg)}
-					<em>benevolent.games</em>
+					<em>${card.title}</em>
 				</div>
 			</header>
+
+			<section class=explainer>
+				<p>${card.description}</p>
+			</section>
 
 			<div class=gamelist>
 				${Object.values(games).map(game => html`
 					<section>
 						<figure>
 							<a href="${game.url}">
-								<img src="${game.poster}" alt=""/>
+								<img src="${game.poster}" alt="" loading="lazy"/>
 							</a>
 						</figure>
 						<div>
@@ -49,7 +66,7 @@ export default template(async basic => {
 							</hgroup>
 							${game.content()}
 							<p>
-								<span>Play at</span>
+								<span>Play now at</span>
 								<a class="play button" href="${game.url}">
 									${game.url}
 								</a>
