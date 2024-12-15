@@ -1,0 +1,43 @@
+{
+	"name": "@benev/site",
+	"private": true,
+	"version": "0.0.0-0",
+	"description": "",
+	"license": "MIT",
+	"author": "Chase Moskal <chasemoskal@gmail.com>",
+	"type": "module",
+	"main": "x/index.js",
+	"files": [
+		"x",
+		"s"
+	],
+	"scripts": {
+		"build": "rm -rf x && turtle build --out=x && turtle ssg --in=s,x --out=x --exclude=bin && run-s links",
+		"links": "run-s links-s links-assets",
+		"links-s": "ln -s \"$(realpath s)\" x/s",
+		"links-assets": "ln -s \"$(realpath assets)\" x/assets",
+		"http": "http-server x",
+		"watch": "turtle watch --in=s,x --out=x --exclude=bin -v",
+		"start": "run-p http watch",
+		"test": "exit 0"
+	},
+	"dependencies": {
+		"@benev/slate": "^0.3.0-2"
+	},
+	"devDependencies": {
+		"@benev/turtle": "^0.6.3",
+		"chokidar": "^4.0.1",
+		"chokidar-cli": "^3.0.0",
+		"http-server": "^14.1.1",
+		"npm-run-all": "^4.1.5",
+		"typescript": "^5.7.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/benevolent-games/site.git"
+	},
+	"bugs": {
+		"url": "https://github.com/benevolent-games/site/issues"
+	},
+	"homepage": "https://github.com/benevolent-games/site#readme"
+}

@@ -1,0 +1,119 @@
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	color-scheme: dark;
+	--link: cyan;
+}
+
+html, body {
+	min-height: 100%;
+}
+
+body {
+	font-size: 16px;
+
+	color: #fffc;
+	background: #111;
+	font-family: sans-serif;
+	color: #aaa;
+
+	scrollbar-gutter: stable;
+	scrollbar-width: thin;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4em;
+	padding-bottom: 4em;
+
+	> header {
+		display: flex;
+		justify-content: center;
+
+		> .logo {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: max-content;
+
+			> svg {
+				height: 16em;
+			}
+
+			> em {
+				font-size: 2em;
+				font-style: italic;
+				font-family: serif;
+			}
+		}
+	}
+
+	> .greeter {
+		text-align: center;
+		margin: 3em auto;
+	}
+
+	> .gamelist {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2em;
+		width: 100%;
+		max-width: 90%;
+		margin: 0 auto;
+
+		> section {
+			display: flex;
+			flex-direction: row;
+			gap: 2em;
+			align-items: center;
+
+			width: 100%;
+			max-width: 40em;
+			padding: 1em;
+
+			background: #181818;
+			border-radius: 2em;
+			box-shadow: .1em .3em .9em #0002;
+
+			> figure img {
+				width: 12em;
+				border-radius: 1em;
+				box-shadow: .1em .2em .4em #0004;
+			}
+
+			> div {
+				display: flex;
+				flex-direction: column;
+				gap: 1em;
+				width: 100%;
+
+				> hgroup {
+					> h2 {
+						opacity: 0.5;
+						font-size: 1.1em
+					}
+				}
+
+				> .buttonbar {
+					width: 100%;
+					display: flex;
+					justify-content: start;
+				}
+			}
+		}
+	}
+
+	> footer {
+		display: flex;
+		gap: 1em;
+	}
+}
+
