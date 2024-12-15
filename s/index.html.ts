@@ -9,7 +9,7 @@ import {SocialCard, renderSocialCardMetas} from "./utils/social-card.js"
 
 const card: SocialCard = {
 	themeColor: "#f2ea8e",
-	siteName: "Benevolent.games",
+	siteName: "benevolent.games",
 	title: "Benevolent Games",
 	description: "Building the future of web games",
 	image: "https://benevolent.games/assets/favicon.png",
