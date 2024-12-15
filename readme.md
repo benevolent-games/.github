@@ -1,7 +1,11 @@
 
-# benevolent.games
+<p align="center"><img width=360 src="assets/b.svg"/></p>
 
-this is the source code for the benevolent games website.
+<br/>
+
+# Benevolent Games
+
+This is the source code for the Benevolent Games website.
 
 👉 **https://benevolent.games/** 👈  
 &nbsp; &nbsp; &nbsp; &nbsp; *visit the website*
