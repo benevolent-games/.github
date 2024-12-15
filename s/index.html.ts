@@ -24,7 +24,7 @@ export default template(async basic => {
 		path,
 		dark: true,
 		css: "index.css",
-		title: "Benevolent.games",
+		title: "Benevolent Games",
 		head: html`
 			<link rel="icon" href="/assets/favicon.png"/>
 			<link rel="stylesheet" href="${path.version.root("index.css")}"/>
