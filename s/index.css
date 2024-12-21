@@ -113,6 +113,11 @@ body {
 			> figure {
 				flex: 0 0 auto;
 
+				& a {
+					&:hover { filter: brightness(120%); }
+					&:active { filter: brightness(80%); }
+				}
+
 				& img {
 					width: 12em;
 					border-radius: 1em;
@@ -128,6 +133,10 @@ body {
 				width: 100%;
 
 				> hgroup {
+					> h1 {
+						color: white;
+						text-shadow: 0 0 0.5em #fff8;
+					}
 					> h2 {
 						opacity: 0.5;
 						font-size: 1.1em

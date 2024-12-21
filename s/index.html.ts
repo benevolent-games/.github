@@ -5,17 +5,11 @@ import {template, html, easypage, headScripts, git_commit_hash, read_file} from 
 
 import {games} from "./games.js"
 import bSvg from "./dom/icons/b.svg.js"
-import {SocialCard, renderSocialCardMetas} from "./utils/social-card.js"
+import {renderSocialCard} from "./utils/social-card.js"
 
-const card: SocialCard = {
-	themeColor: "#f2ea8e",
-	siteName: "benevolent.games",
-	title: "Benevolent Games",
-	description: "Building the future of web games",
-	image: "https://benevolent.games/assets/favicon.png",
-	url: "https://benevolent.games/",
-	type: "website",
-}
+const domain = "benevolent.games"
+const favicon = "/assets/favicon.png"
+const description = "Building the future of web games"
 
 export default template(async basic => {
 	const path = basic.path(import.meta.url)
@@ -26,11 +20,19 @@ export default template(async basic => {
 		css: "index.css",
 		title: "Benevolent Games",
 		head: html`
-			<link rel="icon" href="/assets/favicon.png"/>
+			<link rel="icon" href="${favicon}"/>
 			<link rel="stylesheet" href="${path.version.root("index.css")}"/>
 			<meta data-commit-hash="${hash}"/>
 
-			${renderSocialCardMetas(card)}
+			${renderSocialCard({
+				themeColor: "#f2ea8e",
+				siteName: domain,
+				title: "👼 Benevolent Games",
+				description,
+				image: `https://${domain}${favicon}`,
+				url: `https://${domain}/`,
+				type: "website",
+			})}
 
 			${headScripts({
 				devModulePath: await path.version.root("index.bundle.js"),
@@ -43,8 +45,8 @@ export default template(async basic => {
 			<header>
 				<div class=logo>
 					${svgTurtle(bSvg)}
-					<strong>${card.title}</strong>
-					<em>${card.description}</em>
+					<strong>Benevolent Games</strong>
+					<em>${description}</em>
 				</div>
 			</header>
 

@@ -16,7 +16,7 @@ export function asSocialCard(card: SocialCard) {
 	return card
 }
 
-export function renderSocialCardMetas(card: SocialCard) {
+export function renderSocialCard(card: SocialCard) {
 	return html`
 		<meta name="theme-color" content="${card.themeColor}">
 
