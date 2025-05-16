@@ -1,5 +1,5 @@
 
-<p align="center"><img width=360 src="assets/b.svg"/></p>
+<p align="center"><img width=360 src="assets/favicon.png"/></p>
 
 <br/>
 
