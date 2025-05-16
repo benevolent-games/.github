@@ -35,10 +35,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/benevolent-games/site.git"
+		"url": "git+https://github.com/benevolent-games/.github.git"
 	},
 	"bugs": {
-		"url": "https://github.com/benevolent-games/site/issues"
+		"url": "https://github.com/benevolent-games/.github/issues"
 	},
-	"homepage": "https://github.com/benevolent-games/site#readme"
+	"homepage": "https://github.com/benevolent-games/.github#readme"
 }

@@ -3,10 +3,7 @@
 
 <br/>
 
-# Benevolent Games
+# https://benevolent.games/
 
 This is the source code for the Benevolent Games website.
-
-👉 **https://benevolent.games/** 👈  
-&nbsp; &nbsp; &nbsp; &nbsp; *visit the website*
 
