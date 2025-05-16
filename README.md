@@ -1,5 +1,5 @@
 
-<p align="center"><img width=360 src="https://i.imgur.com/1xXAWcF.png"/></p>
+![](https://i.imgur.com/1xXAWcF.png)
 
 <br/>
 
