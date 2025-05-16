@@ -1,11 +1,8 @@
 
 import "@benev/slate/x/node.js"
-import {svgTurtle} from "@benev/slate/x/tools/svgs/svg-turtle.js"
-import {template, html, easypage, headScripts, git_commit_hash, read_file} from "@benev/turtle"
+import {template, html, easypage, headScripts, git_commit_hash, read_file, renderSocialCard} from "@benev/turtle"
 
 import {games} from "./games.js"
-import bSvg from "./dom/icons/b.svg.js"
-import {renderSocialCard} from "./utils/social-card.js"
 
 const domain = "benevolent.games"
 const favicon = "/assets/favicon.png"
@@ -31,7 +28,6 @@ export default template(async basic => {
 				description,
 				image: `https://${domain}${favicon}`,
 				url: `https://${domain}/`,
-				type: "website",
 			})}
 
 			${headScripts({
@@ -41,43 +37,31 @@ export default template(async basic => {
 			})}
 		`,
 		body: html`
-
 			<header>
 				<div class=logo>
-					${svgTurtle(bSvg)}
+					<img alt="" src="${favicon}"/>
 					<strong>Benevolent Games</strong>
-					<em>${description}</em>
 				</div>
 			</header>
 
 			<div class=gamelist>
 				${Object.values(games).map(game => html`
-					<section>
+					<a class=game href="${game.url}">
 						<figure>
-							<a href="${game.url}">
-								<img src="${game.poster}" alt="" loading="lazy"/>
-							</a>
+							<img src="${game.poster}" alt="" loading="lazy"/>
 						</figure>
 						<div>
-							<hgroup>
-								<h1>${game.label}</h1>
-								<h2>${game.motto}</h2>
-							</hgroup>
-							${game.content()}
-							<p>
-								<span>Play now at</span>
-								<a class="play button" href="${game.url}">
-									${game.url}
-								</a>
-							</p>
+							<h1>${game.label}</h1>
+							<p class=subtitle>${game.motto}</p>
 						</div>
-					</section>
+					</a>
 				`)}
 			</div>
 
 			<footer>
-				<a href="https://github.com/benevolent-games" alt="">GitHub</a>
-				<a href="https://discord.gg/BnZx2utdev" alt="">Discord</a>
+				<p><strong>${description}</strong></p>
+				<p>Learn more on <a href="https://github.com/benevolent-games" alt="">GitHub</a></p>
+				<p>Join us on <a href="https://discord.gg/BnZx2utdev" alt="">Discord</a></p>
 			</footer>
 		`,
 	})

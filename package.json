@@ -13,7 +13,7 @@
 	],
 	"scripts": {
 		"build": "run-s _clean _build:app _build:ssg _ln",
-		"start": "run-p http watch",
+		"start": "run-p _http _watch",
 		"test": "exit 0",
 		"_clean": "rm -rf x",
 		"_build:app": "turtle build --out=x",
